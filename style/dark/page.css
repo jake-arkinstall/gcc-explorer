@@ -57,7 +57,7 @@ h1 {
 /* Main output - issue list */
 
 .gcc-explorer ul.issue_list > li {
-    border-color:#000;
+    border-color: #686262;
     color: #f3f3f3;
 }
 
@@ -82,7 +82,7 @@ h1 {
 
 .gcc-explorer ul.issue_list span.issue_toggle::before {
     background-color: #363a37;
-    border-color:#000;
+    border-color: #686262;
     color: #fff;
 }
 
