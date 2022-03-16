@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <title>GCC Explorer</title>
+    <link rel="icon" type="image/png" href="favicon/32x32.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/16x16.png">
+    <link rel="stylesheet" type="text/css" href="scripts/external/google-code-prettify/prettify.css">
+    <script src="scripts/external/jquery.min.js"></script>
+    <script src="scripts/external/he.min.js"></script>
+    <script src="scripts/external/google-code-prettify/prettify.js"></script>
+    <script src="scripts/common.js"></script>
+    <script src="scripts/explorer.js"></script>
+    <link rel="stylesheet" href="style/base/page.css"/>
+    <link rel="stylesheet" href="style/dark/page.css" id="page-theme"/>
+    <link rel="stylesheet" href="style/dark/code.css" id="code-theme"/>
+</head>
+<body>
+<h1>GCC Explorer</h1>
+<button id="theme-toggle">🌞︎/🌛︎</button>
+<div class="gcc-explorer">
+    <progress></progress>
+    <div class="controls">
+        <button data-action="back-to-form">← back to form</button>
+        <button data-action="toggle-syspaths">Toggle system paths</button>
+    </div>
+    <div class="output"></div>
+    <form>
+        <h2>Paste your GCC error log:</h2>
+        <textarea name="compiler_log"></textarea>
+        <fieldset>
+            <legend> File path hyperlink options (optional)</legend>
+            <label for="launcher-format" aria-describedby="launcher_format_helper">Launcher hyperlink format</label>
+            <select id="launcher-format" name="launcher_format">
+                <option value="clion://open?file=%file&line=%line&column=%column">
+                    clion://open?file=&percnt;file&amp;line=&percnt;line&amp;column=&percnt;column
+                </option>
+                <option value="vscode://file%file:%line:%column">
+                    vscode://file&percnt;file:&percnt;line:&percnt;column
+                </option>
+                <option value="custom">custom</option>
+                ;
+            </select>
+            <div style="display:none">
+                <label for="launcher-format-custom">Custom launcher (e.g. protocol://launch/&percnt;file:&percnt;line:&percnt;column)</label>
+                <input type="text" name="launcher_format_custom" id="launcher-format-custom" value=""/>
+            </div>
+            <p class="helper" id="launcher_format_helper">
+                When file paths are detected in your error log, they are
+                converted into hyperlink following the provided format, replacing %file, %line and %column with their
+                respective values. If the line or column cannot be extracted, they retain the default value of 1. <br/>
+                The
+                hyperlinks can point to a http resource, e.g. if the code is hosted online. However, the typical use
+                case is
+                a custom protocol handler that launches your IDE.
+            </p>
+
+            <label for="project-root" aria-describedby="base_path_helper">Base Filepath</label>
+            <input type="text" name="project_root" id="project-root" placeholder="/home/user/project"/>
+            <p class="helper" id="base_path_helper">
+                Some paths in your error log will be expressed relative to your project
+                root. If you wish to utilise the hyperlink functionality, please provide the path to your project root
+                so
+                that the hyperlinks can point to the correct absolute path on your filesystem.
+            </p>
+        </fieldset>
+        <input type="submit" value="Explore">
+    </form>
+</div>
+<script src="scripts/form-events.js"></script>
+</body>
+</html>

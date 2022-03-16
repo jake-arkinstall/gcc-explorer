@@ -1,0 +1,142 @@
+body {
+    background-color: #fff;
+    color: #0c0c0c;
+}
+
+h1 {
+    background-color: #232f37;
+    color: #fff;
+}
+
+/* Form styles */
+
+.gcc-explorer form > input[type="submit"] {
+    background-color: #f6fdff;
+    color: #000;
+}
+
+.gcc-explorer form input[type="text"] {
+    color: #0c0c0c;
+}
+
+.gcc-explorer form select {
+    background-color: #ffffff;
+    color: #0c0c0c;
+}
+
+
+.gcc-explorer form textarea{
+    background-color:#fffffe;
+    color:#0c0c0c;
+}
+
+
+.gcc-explorer .helper-reveal {
+    color: #9c00bd;
+    
+}
+
+.gcc-explorer form .helper {
+    background-color: #c0bbb9;
+    color:#000;
+}
+
+
+/* controls */
+
+.gcc-explorer .controls button {
+    background-color: #f7fcff;
+    border-color:#848484;
+    color: #0c0c0c;
+}
+
+.gcc-explorer .controls button:hover {
+    border-color: #cdcdcd;
+    background-color: #fff;
+}
+
+/* Main output - issue list */
+
+.gcc-explorer ul.issue_list > li {
+    border-color:#fff;
+    color: #0c0c0c;
+}
+
+/* Each issue has a type - give them different styles for clarity */
+.gcc-explorer ul.issue_list > li[data-issue-type="default"] {
+    background-color: #bfebc4;
+}
+
+.gcc-explorer ul.issue_list > li[data-issue-type="error"] {
+    background-color: #ffe9e9;
+}
+
+.gcc-explorer ul.issue_list > li[data-issue-type="warning"] {
+    background-color: #c4c4c4;
+}
+
+.gcc-explorer ul.issue_list > li[data-issue-type="note"] {
+    background-color: #eef9f7;
+}
+
+/* The issue contains a span (.issue_toggle) that toggles the folding of the content */
+
+.gcc-explorer ul.issue_list span.issue_toggle::before {
+    background-color: #6e6e6e;
+    border-color:#fff;
+    color: #000;
+}
+
+.gcc-explorer ul.issue_list .lines {
+    background-color: #f7f7f7;
+    color: #000505;
+}
+.gcc-explorer ul.issue_list .lines a.local {
+    color: #549b2c;
+}
+
+.gcc-explorer ul.issue_list .lines a.system {
+    color: #b54343
+}
+
+.gcc-explorer .lines > li {
+    background-color: #fefefe;
+}
+
+.gcc-explorer .lines > li:nth-child(odd) {
+    background-color: #f9f9f9;
+}
+
+.gcc-explorer .specialisation-list {
+    background-color: #f9fdff;
+    color: #000;
+}
+
+.gcc-explorer .specialisation-list thead {
+    background-color: #d3e3e9;
+    border-color:#000;
+}
+
+.gcc-explorer .specialisation-list tbody {
+    border-color:#000;
+}
+
+.gcc-explorer .specialisation-list tr td:nth-child(1) {
+    border-right-color:#1f2823;
+}
+
+.gcc-explorer .specialisation-list tr th:nth-child(1) {
+    border-right-color:#000;
+}
+
+.gcc-explorer .specialisation-list tr:nth-child(even) {
+    background-color: #ecf7fb;
+}
+
+.gcc-explorer .fold_toggle.nested {
+    color: #7a7062;
+}
+
+.gcc-explorer .fold_toggle.specialisation {
+    color: #6b4294;
+}
