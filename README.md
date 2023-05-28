@@ -6,7 +6,7 @@ warnings while building, and as the build output is very verbose, developers
 tend to ignore/miss the warnings as they don't fail the build and to not stick
 out. With this visual tool exploring the warnings is a lot easier.
 
-Currently hosted at https://theoreticallyphysics.com/gcc-explorer, but feel free
+Currently hosted at https://gcc-explorer.com/, but feel free
 to clone or fork and run your own instance.
 
 [![GCC Explorer demo](screenshot.png)](https://www.youtube.com/watch?v=cKLPlHHa7vk)
